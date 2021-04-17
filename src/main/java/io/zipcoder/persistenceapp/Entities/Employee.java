@@ -1,6 +1,7 @@
 package io.zipcoder.persistenceapp.Entities;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 public class Employee {
@@ -15,10 +16,24 @@ public class Employee {
     private String email;
     private Date hireDate;
     private String manager;
-    @OneToOne
+    @ManyToOne
     private Department departmentNumber;
 
     public Employee() {
+    }
+
+    public Employee(Long employeeNumber, String firstName, String lastName,
+                    String title, Long phoneNumber, String email, Date hireDate,
+                    String manager, Department departmentNumber) {
+        this.employeeNumber = employeeNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.hireDate = hireDate;
+        this.manager = manager;
+        this.departmentNumber = departmentNumber;
     }
 
     public Long getEmployeeNumber() {
@@ -91,5 +106,18 @@ public class Employee {
 
     public void setDepartmentNumber(Department departmentNumber) {
         this.departmentNumber = departmentNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(employeeNumber, employee.employeeNumber) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(title, employee.title) && Objects.equals(phoneNumber, employee.phoneNumber) && Objects.equals(email, employee.email) && Objects.equals(hireDate, employee.hireDate) && Objects.equals(manager, employee.manager) && Objects.equals(departmentNumber, employee.departmentNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeNumber, firstName, lastName, title, phoneNumber, email, hireDate, manager, departmentNumber);
     }
 }

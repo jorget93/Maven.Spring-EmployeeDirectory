@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeService {
 
-
     private EmployeeRepository repository;
 
     public EmployeeService(EmployeeRepository repository){
@@ -28,7 +27,6 @@ public class EmployeeService {
     public Employee create(Employee employee) {
         return repository.save(employee);
     }
-
 
     public Employee update( Long number, Employee newEmployee) {
         Employee employee = repository.findOne(number);
