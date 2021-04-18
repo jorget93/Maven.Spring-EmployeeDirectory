@@ -8,56 +8,56 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long employeeNumber;
-    private String firstName;
-    private String lastName;
+    private Long employee_Number;
+    private String first_Name;
+    private String last_Name;
     private String title;
-    private Long phoneNumber;
+    private String phone_Number;
     private String email;
-    private Date hireDate;
+    private String hire_Date;
     private String manager;
     @ManyToOne
-    private Department departmentNumber;
+    private Department department_Number;
 
     public Employee() {
     }
 
     public Employee(Long employeeNumber, String firstName, String lastName,
-                    String title, Long phoneNumber, String email, Date hireDate,
+                    String title, String phoneNumber, String email, String hireDate,
                     String manager, Department departmentNumber) {
-        this.employeeNumber = employeeNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.employee_Number = employeeNumber;
+        this.first_Name = firstName;
+        this.last_Name = lastName;
         this.title = title;
-        this.phoneNumber = phoneNumber;
+        this.phone_Number = phoneNumber;
         this.email = email;
-        this.hireDate = hireDate;
+        this.hire_Date = hireDate;
         this.manager = manager;
-        this.departmentNumber = departmentNumber;
+        this.department_Number = departmentNumber;
     }
 
     public Long getEmployeeNumber() {
-        return employeeNumber;
+        return employee_Number;
     }
 
     public void setEmployeeNumber(Long employeeNumber) {
-        this.employeeNumber = employeeNumber;
+        this.employee_Number = employeeNumber;
     }
 
     public String getFirstName() {
-        return firstName;
+        return first_Name;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.first_Name = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return last_Name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.last_Name = lastName;
     }
 
     public String getTitle() {
@@ -68,12 +68,12 @@ public class Employee {
         this.title = title;
     }
 
-    public Long getPhoneNumber() {
-        return phoneNumber;
+    public String getPhoneNumber() {
+        return phone_Number;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phone_Number = phoneNumber;
     }
 
     public String getEmail() {
@@ -84,12 +84,12 @@ public class Employee {
         this.email = email;
     }
 
-    public Date getHireDate() {
-        return hireDate;
+    public String getHireDate() {
+        return hire_Date;
     }
 
-    public void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
+    public void setHireDate(String hireDate) {
+        this.hire_Date = hireDate;
     }
 
     public String getManager() {
@@ -101,11 +101,11 @@ public class Employee {
     }
 
     public Department getDepartmentNumber() {
-        return departmentNumber;
+        return department_Number;
     }
 
     public void setDepartmentNumber(Department departmentNumber) {
-        this.departmentNumber = departmentNumber;
+        this.department_Number = departmentNumber;
     }
 
     @Override
@@ -113,11 +113,11 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(employeeNumber, employee.employeeNumber) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(title, employee.title) && Objects.equals(phoneNumber, employee.phoneNumber) && Objects.equals(email, employee.email) && Objects.equals(hireDate, employee.hireDate) && Objects.equals(manager, employee.manager) && Objects.equals(departmentNumber, employee.departmentNumber);
+        return Objects.equals(employee_Number, employee.employee_Number) && Objects.equals(first_Name, employee.first_Name) && Objects.equals(last_Name, employee.last_Name) && Objects.equals(title, employee.title) && Objects.equals(phone_Number, employee.phone_Number) && Objects.equals(email, employee.email) && Objects.equals(hire_Date, employee.hire_Date) && Objects.equals(manager, employee.manager) && Objects.equals(department_Number, employee.department_Number);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(employeeNumber, firstName, lastName, title, phoneNumber, email, hireDate, manager, departmentNumber);
+        return Objects.hash(employee_Number, first_Name, last_Name, title, phone_Number, email, hire_Date, manager, department_Number);
     }
 }

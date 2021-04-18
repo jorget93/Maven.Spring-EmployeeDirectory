@@ -7,26 +7,26 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long departmentNumber;
+    private Long department_Number;
     private String name;
     @ManyToOne
-    private Employee departmentManager;
+    private Employee department_Manager;
 
     public Department() {
     }
 
     public Department(Long departmentNumber, String name, Employee departmentManager) {
-        this.departmentNumber = departmentNumber;
+        this.department_Number = departmentNumber;
         this.name = name;
-        this.departmentManager = departmentManager;
+        this.department_Manager = departmentManager;
     }
 
     public Long getDepartmentNumber() {
-        return departmentNumber;
+        return department_Number;
     }
 
     public void setDepartmentNumber(Long departmentNumber) {
-        this.departmentNumber = departmentNumber;
+        this.department_Number = departmentNumber;
     }
 
     public String getName() {
@@ -38,11 +38,11 @@ public class Department {
     }
 
     public Employee getDepartmentManager() {
-        return departmentManager;
+        return department_Manager;
     }
 
     public void setDepartmentManager(Employee departmentManager) {
-        this.departmentManager = departmentManager;
+        this.department_Manager = departmentManager;
     }
 
     @Override
@@ -50,11 +50,11 @@ public class Department {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department that = (Department) o;
-        return Objects.equals(departmentNumber, that.departmentNumber) && Objects.equals(name, that.name) && Objects.equals(departmentManager, that.departmentManager);
+        return Objects.equals(department_Number, that.department_Number) && Objects.equals(name, that.name) && Objects.equals(department_Manager, that.department_Manager);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(departmentNumber, name, departmentManager);
+        return Objects.hash(department_Number, name, department_Manager);
     }
 }
